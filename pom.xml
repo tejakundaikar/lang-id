@@ -6,7 +6,7 @@
 
     <groupId>lang-id</groupId>
     <artifactId>lang-id</artifactId>
-    <version>1.0.0a</version>
+    <version>1.0.0-a</version>
 
     <packaging>pom</packaging>
     <name>Lang-id</name>
@@ -15,7 +15,7 @@
     <distributionManagement>
         <repository>
             <id>local-repo-clone</id>
-            <url>file://${project.basedir}/../maven</url>
+            <url>file://${project.basedir}/../maven-repo</url>
         </repository>
     </distributionManagement>
 
@@ -23,7 +23,7 @@
         <repository>
             <id>ahmetaa-repo</id>
             <name>ahmetaa Maven Repo on Github</name>
-            <url>https://raw.github.com/ahmetaa/maven-repo/master</url>
+            <url>https://raw.github.com/ahmetaa/../maven-repo/master</url>
         </repository>
     </repositories>
 
@@ -92,11 +92,6 @@
         <dependency>
             <groupId>smooth-nlp</groupId>
             <artifactId>smooth-core</artifactId>
-            <version>1.0.0-a</version>
-        </dependency>
-        <dependency>
-            <groupId>smooth-nlp</groupId>
-            <artifactId>smooth-lm</artifactId>
             <version>1.0.0-a</version>
         </dependency>
     </dependencies>
