@@ -1,7 +1,7 @@
 package bilgem.nlp.langid.model;
 
 import com.google.common.io.Closeables;
-import smoothnlp.core.CountingSet;
+import smoothnlp.core.Histogram;
 
 import java.io.*;
 import java.util.List;
@@ -11,19 +11,19 @@ import java.util.List;
  */
 public class CharNgramCountModel extends BaseCharNgramModel implements Serializable {
 
-    private CountingSet<String>[] gramCounts;
+    private Histogram<String>[] gramCounts;
 
     private static final long serialVersionUID = 0xBEEFCAFEABCDL;
 
     public CharNgramCountModel(String modelId, int order) {
         super(modelId, order);
-        gramCounts = new CountingSet[order + 1];
+        gramCounts = new Histogram[order + 1];
         for (int i = 0; i < gramCounts.length; i++) {
-            gramCounts[i] = new CountingSet<String>();
+            gramCounts[i] = new Histogram<String>();
         }
     }
 
-    private CharNgramCountModel(String id, int order, CountingSet<String>[] gramCounts) {
+    private CharNgramCountModel(String id, int order, Histogram<String>[] gramCounts) {
         super(id, order);
         this.gramCounts = gramCounts;
     }
@@ -52,10 +52,10 @@ public class CharNgramCountModel extends BaseCharNgramModel implements Serializa
             dis = new DataInputStream(new BufferedInputStream(is));
             int order = dis.readInt();
             String modelId = dis.readUTF();
-            CountingSet<String>[] gramCounts = new CountingSet[order + 1];
+            Histogram<String>[] gramCounts = new Histogram[order + 1];
             for (int j = 1; j <= order; j++) {
                 int size = dis.readInt();
-                CountingSet<String> countSet = new CountingSet<String>(size);
+                Histogram<String> countSet = new Histogram<String>(size);
                 for (int i = 0; i < size; i++) {
                     String key = dis.readUTF();
                     countSet.add(key, dis.readInt());

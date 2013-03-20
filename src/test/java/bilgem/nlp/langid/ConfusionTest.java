@@ -7,7 +7,7 @@ import com.cybozu.labs.langdetect.LangDetectException;*/
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import smoothnlp.core.CountingSet;
+import smoothnlp.core.Histogram;
 import smoothnlp.core.io.Files;
 import smoothnlp.core.io.SimpleTextReader;
 import smoothnlp.core.io.Strings;
@@ -43,7 +43,7 @@ public class ConfusionTest {
             int correctAmount = 0;
             for (TestSet set : sets) {
                 totalCount += set.size();
-                CountingSet<String> result = new CountingSet<String>();
+                Histogram<String> result = new Histogram<String>();
                 for (String s : set.testPieces) {
 /*
                     LanguageIdentifier.IdResult idResult = identifier.identifyFullConf(s);

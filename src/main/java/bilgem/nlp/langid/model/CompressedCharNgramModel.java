@@ -2,7 +2,7 @@ package bilgem.nlp.langid.model;
 
 import com.google.common.collect.Lists;
 import com.google.common.io.Closeables;
-import smoothnlp.core.CountingSet;
+import smoothnlp.core.Histogram;
 import smoothnlp.core.hash.IntHashKeyProvider;
 import smoothnlp.core.hash.Mphf;
 import smoothnlp.core.hash.MultiLevelMphf;
@@ -56,7 +56,7 @@ public class CompressedCharNgramModel extends BaseCharNgramModel implements Char
             dos.writeUTF(model.getId());
 
             for (int i = 1; i <= model.getOrder(); i++) {
-                CountingSet<Double> histogram = new CountingSet<Double>();
+                Histogram<Double> histogram = new Histogram<Double>();
                 histogram.add(model.gramLogProbs[i].values.values());
                 double[] lookup = new double[histogram.size()];
                 int j = 0;
@@ -75,7 +75,7 @@ public class CompressedCharNgramModel extends BaseCharNgramModel implements Char
 
                 for (final String key : keys) {
                     final int index = mphfs[i].get(key);
-                    fingerprints[index] = MultiLevelMphf.fingerPrint(key) & FINGER_PRINT_MASK;
+                    fingerprints[index] = MultiLevelMphf.hash(key, -1) & FINGER_PRINT_MASK;
                     probabilityIndexes[index] = quantizer.getQuantizationIndex(model.gramLogProbs[i].values.get(key));
                 }
 
@@ -106,7 +106,7 @@ public class CompressedCharNgramModel extends BaseCharNgramModel implements Char
         if (gram.length() > order)
             throw new IllegalArgumentException("Gram size is larger than order! gramSize=" + gram.length() + " but order is:" + order);
         int o = gram.length();
-        int fingerPrint = MultiLevelMphf.fingerPrint(gram);
+        int fingerPrint = MultiLevelMphf.hash(gram, -1);
         int hash = mphfs[o].get(gram, fingerPrint);
         if ((fingerPrint & FINGER_PRINT_MASK) == gramData[o].getFP(hash)) {
             return lookups[o].get(gramData[o].getProbLookupIndex(hash));

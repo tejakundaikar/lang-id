@@ -7,32 +7,34 @@ import java.util.Locale;
 import java.util.Set;
 
 public enum Language {
-    AR, AZ,
-    BA, BE, BG, BS,
-    CA, CE, CK, CS, CV,
-    DA, DE, DIQ,
-    EL, EN, EO, ES, ET, EU,
-    FA, FI, FR,
-    HE, HI, HR, HU, HY,
-    ID, IS, IT,
-    JA, JV,
-    KA, KK, KM, KO, KU, KY,
-    LA, LT, LV,
-    ML, MN, MS, MY,
-    NL, NO,
-    PL, PT,
-    RO, RU,
-    SK, SL, SR, SV,
-    TR,
-    UK, UZ,
-    VI,
-    WAR,
-    ZH;
+    AR("Arabic"), AZ("Azeri"),
+    BA("Bashkir"), BE("Belarusian"), BG("Bulgarian"), BS("Bosnian"),
+    CA("Catalan"), CE("Chechen"), CK("Kurdish-Sorani"), CS("Czech"), CV("Chuvash"),
+    DA("Danish"), DE("German"), DIQ("Zazaki"),
+    EL("Greek"), EN("English"), EO("Esperanto"), ES("Spanish"), ET("Estonian"), EU("Basque"),
+    FA("Persian"), FI("Finnish"), FR("French"),
+    HE("Hebrew"), HI("Hindi"), HR("Croatian"), HU("Hungarian"), HY("Armenian"),
+    ID("Indonesian"), IS("Icelandic"), IT("Italian"),
+    JA("Japanese"), JV("Javanese"),
+    KA("Georgian"), KK("Kazakh"), KM("Khmer"), KO("Korean"), KU("Kurdish"), KY("Krgyz"),
+    LA("Latin"), LT("Lithuanian"), LV("Latvian"),
+    ML("Malayalam"), MN("Mongolian"), MS("Malay"), MY("Burmese"),
+    NL("Dutch"), NO("Norwegian"),
+    PL("Polish"), PT("Portuguese"),
+    RO("Romanian"), RU("Russian"),
+    SK("Slovak"), SL("Slovene"), SR("Serbian"), SV("Swedish"),
+    TR("Turkish"),
+    UK("Ukranian"), UZ("Uzbek"),
+    VI("Vietnamese"),
+    WAR("Waray"),
+    ZH("Chinese");
 
-    String id;
+    public String id;
+    public String name;
 
-    private Language() {
+    Language(String name) {
         this.id = name().toLowerCase(Locale.ENGLISH);
+        this.name = name;
     }
 
     public static Language getByName(String input) {
