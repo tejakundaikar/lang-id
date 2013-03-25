@@ -167,7 +167,7 @@ public class ConfusionTest {
         //String[]  langs = {"tr", "ar", "az", "hy", "bg", "en", "el", "ka", "ku", "fa", "de","fr","nl","diq"};
         // String[] langs = Language.allLanguages();
         //LanguageIdentifier identifier = LanguageIdentifier.generateFromCounts(new File("/home/kodlab/data/language-data/models/counts"),langs);
-        LanguageIdentifier identifier = LanguageIdentifier.fromModelGroup("tr_en_compressed", langs);
+        LanguageIdentifier identifier = LanguageIdentifier.fromModelGroup("tr_en", langs);
         System.out.println("Model generation: " + sw.elapsed(TimeUnit.MILLISECONDS));
         ConfusionTest confusionTest = new ConfusionTest(identifier);
         confusionTest.testAll();

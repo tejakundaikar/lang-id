@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c13eeb84-230a-4634-998e-1cab28fff5b1" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en_compressed/en.clm" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/en.clm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en_compressed/tr.clm" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/tr.clm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en_compressed/unk.clm" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/unk.clm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/ConfusionTest.java" afterPath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/ConfusionTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" afterPath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/MapBasedCharNgramLanguageModel.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/MapBasedCharNgramLanguageModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lang-id.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../zemberek/zemberek/pom.xml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361952260755" ignored="false" />
-    <file path="/pom.xml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361890364259" ignored="false" />
+    <file path="/pom.xml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364221924804" ignored="false" />
     <file path="$PROJECT_DIR$/../BilgemNlpToolkit/src/bilgem/nlp/apps/TurkishMorphology.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361865532485" ignored="false" />
     <file path="/TurkishMorphology.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361865421613" ignored="false" />
     <file path="$PROJECT_DIR$/../BilgemNlpToolkit/src/bilgem/nlp/apps/TurkishSentenceTokenizer.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361865532485" ignored="false" />
-    <file path="/Dummy.txt" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364221798813" ignored="false" />
+    <file path="/Dummy.txt" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364221808764" ignored="false" />
     <file path="$PROJECT_DIR$/../smooth-nlp/smooth-lm/smooth-lm.iml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361871174055" ignored="false" />
     <file path="$PROJECT_DIR$/../antlr4/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361880625894" ignored="false" />
     <file path="$PROJECT_DIR$/../antlr4/runtime/Java/pom.xml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361951966909" ignored="false" />
@@ -38,6 +44,7 @@
     <file path="$PROJECT_DIR$/../smooth-nlp/smooth-core/src/test/java/smoothnlp/core/HistogramTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364218061313" ignored="false" />
     <file path="/HistogramTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364218058479" ignored="false" />
     <file path="/CompressedCharNgramModel.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364220083219" ignored="false" />
+    <file path="/LanguageIndentifierTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364224431811" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,16 +172,16 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="18" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+            <state line="17" column="36" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LanguageIndentifierTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LanguageIndentifierTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="55" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+            <state line="20" column="29" selection-start="728" selection-end="728" vertical-scroll-proportion="0.34819278">
               <folding />
             </state>
           </provider>
@@ -189,10 +196,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trainer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Trainer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="35" selection-start="8052" selection-end="8052" vertical-scroll-proportion="0.75335777">
+            <state line="198" column="35" selection-start="8052" selection-end="8052" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -240,8 +247,9 @@
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/CompressedCharNgramModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/ConfusionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/CharNgramCountModel.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" />
       </list>
     </option>
   </component>
@@ -406,6 +414,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="langid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tr_en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -587,7 +599,7 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LanguageIndentifierTest.functionalTest">
+  <component name="RunManager" selected="JUnit.LanguageIndentifierTest.functionalTest2">
     <configuration default="false" name="lang-id [deploy]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -600,31 +612,6 @@
             <option name="goals">
               <list>
                 <option value="deploy" />
-              </list>
-            </option>
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="lang-id [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="package" />
               </list>
             </option>
             <option name="profilesMap">
@@ -691,6 +678,28 @@
       <option name="PACKAGE_NAME" value="bilgem.nlp.langid" />
       <option name="MAIN_CLASS_NAME" value="bilgem.nlp.langid.LanguageIndentifierTest" />
       <option name="METHOD_NAME" value="functionalTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanguageIndentifierTest.functionalTest2" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="lang-id" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="bilgem.nlp.langid" />
+      <option name="MAIN_CLASS_NAME" value="bilgem.nlp.langid.LanguageIndentifierTest" />
+      <option name="METHOD_NAME" value="functionalTest2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -817,18 +826,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Maven.lang-id [deploy]" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.lang-id [package]" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ConfusionTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Trainer" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ConfusionTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Trainer" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ConfusionTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Trainer" />
-        <item index="3" class="java.lang.String" itemvalue="Maven.lang-id [deploy]" />
-        <item index="4" class="java.lang.String" itemvalue="Maven.lang-id [package]" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest2" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ConfusionTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Trainer" />
+        <item index="4" class="java.lang.String" itemvalue="Maven.lang-id [deploy]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -889,33 +898,37 @@
       <created>1364221726937</created>
       <updated>1364221726937</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix class loading correctly. Thanks to Canan Girgin">
+      <created>1364221819608</created>
+      <updated>1364221819608</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1617" height="1025" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19566603" sideWeight="0.6704675" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19566603" sideWeight="0.7331813" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18801785" sideWeight="0.6704675" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18801785" sideWeight="0.7331813" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2668187" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1055,20 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="55" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/CharNgramCountModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="38" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0">
@@ -1085,7 +1084,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="35" selection-start="8052" selection-end="8052" vertical-scroll-proportion="0.75335777">
+        <state line="198" column="35" selection-start="8052" selection-end="8052" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="36" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="29" selection-start="728" selection-end="728" vertical-scroll-proportion="0.34819278">
           <folding />
         </state>
       </provider>
