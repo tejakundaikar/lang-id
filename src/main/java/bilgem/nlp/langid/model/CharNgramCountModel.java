@@ -1,8 +1,5 @@
 package bilgem.nlp.langid.model;
 
-import com.google.common.io.Closeables;
-import smoothnlp.core.Histogram;
-
 import java.io.*;
 import java.util.List;
 
@@ -11,19 +8,19 @@ import java.util.List;
  */
 public class CharNgramCountModel extends BaseCharNgramModel implements Serializable {
 
-    private Histogram<String>[] gramCounts;
+    private CountingSet<String>[] gramCounts;
 
     private static final long serialVersionUID = 0xBEEFCAFEABCDL;
 
     public CharNgramCountModel(String modelId, int order) {
         super(modelId, order);
-        gramCounts = new Histogram[order + 1];
+        gramCounts = new CountingSet[order + 1];
         for (int i = 0; i < gramCounts.length; i++) {
-            gramCounts[i] = new Histogram<String>();
+            gramCounts[i] = new CountingSet<>();
         }
     }
 
-    private CharNgramCountModel(String id, int order, Histogram<String>[] gramCounts) {
+    private CharNgramCountModel(String id, int order, CountingSet<String>[] gramCounts) {
         super(id, order);
         this.gramCounts = gramCounts;
     }
@@ -47,15 +44,13 @@ public class CharNgramCountModel extends BaseCharNgramModel implements Serializa
      * @throws java.io.IOException
      */
     public static CharNgramCountModel load(InputStream is) throws IOException {
-        DataInputStream dis = null;
-        try {
-            dis = new DataInputStream(new BufferedInputStream(is));
+        try (DataInputStream dis = new DataInputStream(new BufferedInputStream(is))) {
             int order = dis.readInt();
             String modelId = dis.readUTF();
-            Histogram<String>[] gramCounts = new Histogram[order + 1];
+            CountingSet<String>[] gramCounts = new CountingSet[order + 1];
             for (int j = 1; j <= order; j++) {
                 int size = dis.readInt();
-                Histogram<String> countSet = new Histogram<String>(size);
+                CountingSet<String> countSet = new CountingSet<>(size * 2);
                 for (int i = 0; i < size; i++) {
                     String key = dis.readUTF();
                     countSet.add(key, dis.readInt());
@@ -64,8 +59,6 @@ public class CharNgramCountModel extends BaseCharNgramModel implements Serializa
 
             }
             return new CharNgramCountModel(modelId, order, gramCounts);
-        } finally {
-            Closeables.close(dis, true);
         }
     }
 
@@ -86,9 +79,7 @@ public class CharNgramCountModel extends BaseCharNgramModel implements Serializa
      * @throws java.io.IOException
      */
     public void save(File f) throws IOException {
-        DataOutputStream dos = null;
-        try {
-            dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(f)));
+        try (DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(f)))) {
             dos.writeInt(order);
             dos.writeUTF(id);
             for (int i = 1; i < gramCounts.length; i++) {
@@ -98,8 +89,6 @@ public class CharNgramCountModel extends BaseCharNgramModel implements Serializa
                     dos.writeInt(gramCounts[i].getCount(key));
                 }
             }
-        } finally {
-            Closeables.close(dos, true);
         }
     }
 
