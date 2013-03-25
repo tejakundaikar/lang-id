@@ -8,6 +8,7 @@ import com.google.common.io.Resources;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -44,11 +45,12 @@ public class LanguageIdentifier {
         Set<String> availableLangIdSet = Sets.newHashSet(Language.languageIdSet());
         int order = 3;
         // generate models for required models on the fly.
-        System.out.println("Generating models for:" + Arrays.toString(languages));
+        logger.info("Generating models for:" + Arrays.toString(languages));
         for (String language : languages) {
             String l = language.toLowerCase();
             if (availableLangIdSet.contains(l)) {
-                CharNgramCountModel countModel = CharNgramCountModel.load(Resources.getResource("models/langid/count/" + l + ".count").openStream());
+                CharNgramCountModel countModel = CharNgramCountModel.load(
+                        LanguageIdentifier.class.getClassLoader().getResourceAsStream("models/langid/count/" + l + ".count"));
                 order = countModel.order;
                 MapBasedCharNgramLanguageModel lm = MapBasedCharNgramLanguageModel.train(countModel);
                 modelMap.put(l, lm);
@@ -59,10 +61,11 @@ public class LanguageIdentifier {
         }
         // generate garbage model from the remaining files if any left.
         if (!availableLangIdSet.isEmpty()) {
-            System.out.println("Generating garbage model from remaining count models.");
+            logger.info("Generating garbage model from remaining count models.");
             CharNgramCountModel garbageModel = new CharNgramCountModel("unk", order);
             for (String id : availableLangIdSet) {
-                garbageModel.merge(CharNgramCountModel.load(Resources.getResource("models/langid/count/" + id + ".count").openStream()));
+                garbageModel.merge(CharNgramCountModel.load(
+                        LanguageIdentifier.class.getClassLoader().getResourceAsStream("models/langid/count/" + id + ".count")));
             }
             MapBasedCharNgramLanguageModel lm = MapBasedCharNgramLanguageModel.train(garbageModel);
             modelMap.put(lm.getId(), lm);
@@ -82,7 +85,7 @@ public class LanguageIdentifier {
             modelFileMap.put(langStr, file);
         }
         // generate models for required models on the fly.
-        System.out.println("Generating models for:" + Arrays.toString(languages));
+        logger.info("Generating models for:" + Arrays.toString(languages));
 
         for (String language : languages) {
             String l = language.toLowerCase();
@@ -93,12 +96,12 @@ public class LanguageIdentifier {
                 modelMap.put(l, lm);
                 modelFileMap.remove(l);
             } else {
-                System.out.println("Cannot find count model file for language " + language);
+                logger.warning("Cannot find count model file for language " + language);
             }
         }
         // generate garbage model from the remaining files if any left.
         if (!modelFileMap.isEmpty()) {
-            System.out.println("Generating garbage model from remaining count models.");
+            logger.info("Generating garbage model from remaining count models.");
             CharNgramCountModel garbageModel = new CharNgramCountModel("unk", order);
             for (File file : modelFileMap.values()) {
                 garbageModel.merge(CharNgramCountModel.load(file));
@@ -123,7 +126,7 @@ public class LanguageIdentifier {
 
     private int[] getStepping(String content, int gramAmount) {
         int gramIndexLimit = content.length() - order + 1;
-        // if gram count value is larder than the limit value, we get the max amount
+        // if gram count value is larger than the limit value, we get the max amount
         int gramCount = gramAmount;
         if (gramCount > gramIndexLimit)
             gramCount = gramIndexLimit;
@@ -160,6 +163,31 @@ public class LanguageIdentifier {
         return all;
     }
 
+    /**
+     * Loads internal models from internal compressed resource folder.
+     * Such as
+     *
+     * @param groupId
+     * @param languages
+     * @return
+     * @throws IOException
+     */
+    public static LanguageIdentifier fromModelGroup(String groupId, String... languages) throws IOException {
+        if (languages.length == 0)
+            throw new IllegalArgumentException("No language is provided!");
+        Map<String, CharNgramLanguageModel> map = Maps.newHashMap();
+        List<String> langs = Lists.newArrayList(languages);
+        langs.add("unk");
+        for (String language : langs) {
+            String resourceName = "/models/langid/" + groupId + "/" + language + ".clm";
+            InputStream is = Resources.getResource(LanguageIdentifier.class, resourceName).openStream();
+            if (is == null)
+                throw new IllegalArgumentException("No internal model found: " + resourceName);
+            CompressedCharNgramModel model = CompressedCharNgramModel.load(is);
+            map.put(language, model);
+        }
+        return new LanguageIdentifier(map);
+    }
 
     private static Map<String, CharNgramLanguageModel> getModelsFromDir(File dir, boolean compressed) throws IOException {
         Map<String, CharNgramLanguageModel> map = Maps.newHashMap();

@@ -187,16 +187,18 @@ public class Trainer {
         Trainer trainer = new Trainer(
                 trainingDirs,
                 countModelDir,
-                2,
-                new int[]{10, 5});
+                3,
+                new int[]{20, 2, 3});
+
         trainer.trainParallel(all);
 
         Trainer trainer2 = new Trainer(
                 trainingDirs,
                 countModelDir,
-                2,
-                new int[]{50, 30});
+                3,
+                new int[]{50, 30, 30});
         trainer2.trainParallel(large);
+
         File compressedModelDir = new File("/home/kodlab/data/language-data/models/compressed");
         String[] languages = {"tr","en"};
         trainer.generateModelsToDir(countModelDir,compressedModelDir, languages, true );
