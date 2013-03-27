@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 
 public class LanguageIdentifier {
 
+    public static final int ELIMINATION_SAMPLE_STEP = 20;
     static Logger logger = Logger.getLogger(LanguageIdentifier.class.getName());
 
     public final int order;
@@ -243,63 +244,72 @@ public class LanguageIdentifier {
         }
     }
 
-    public String identifyFull(String input) {
+    /**
+     * Identifies input text's language.
+     * It uses all data in the content and calculates score for all supplied languages.
+     *
+     * @param input input text
+     * @return identified language's id
+     */
+    public String identify(String input) {
         String clean = preprocess(input);
         if (clean.length() < order)
             return UNKNOWN;
-        return identifyWithSampling(clean, clean.length());
-    }
-
-    public String identifyFull(String input, double confidenceThreshold) {
-        String clean = preprocess(input);
-        if (clean.length() < order)
-            return UNKNOWN;
-        IdResult result = identifyConf(clean, getSequencial(clean));
-        if (result.score >= confidenceThreshold)
-            return result.id;
-        else
-            return UNKNOWN;
+        return identifySamples(clean, getStepping(clean, clean.length() - 1));
     }
 
     /**
-     * This methods gets 50 samples from the input for detecting the language of the content.
+     * Identifies input text's language using sampling. This methods gets maxSampleCount amount of samples
+     * from the input for detecting the language of the content.
      *
-     * @param input content
-     * @return identified language
+     * @param input          content
+     * @param maxSampleCount Max sampling value. Identifier gets this amount of samples from the content with stepping.
+     *                       if content length is less than maxSampleCount, or maxSampleCount is -1 then sampling is not
+     *                       applied and method behaves like {@link #identify(String) getComponentAt} method.
+     * @return identified language's id
      */
-    public String identifyWithSampling(String input) {
+    public String identify(String input, int maxSampleCount) {
         String clean = preprocess(input);
         if (clean.length() < order)
             return UNKNOWN;
-        return identify(clean, getStepping(clean, 50));
+        return identifySamples(clean, getStepping(clean, maxSampleCount));
     }
 
-    public String identifyWithSampling(String input, int maxSampleCount) {
-        String clean = preprocess(input);
-        if (clean.length() < order)
-            return UNKNOWN;
-        return identify(clean, getStepping(clean, maxSampleCount));
-    }
-
-    public String identifyWithSampling(String input, int maxSampleCount, double threshold) {
-        String clean = preprocess(input);
-        if (clean.length() < order)
-            return UNKNOWN;
-        IdResult result = identifyConf(clean, getStepping(clean, maxSampleCount));
-        if (result.score >= threshold)
-            return result.id;
-        else
-            return BaseCharNgramModel.UNKNOWN;
-    }
-
-    public String identifyWithSamplingLarge(String input, int maxSampleCount) {
+    /**
+     * When more than 5 languages are are tested for identification, this method applies elimination
+     * of some models after every 20 scoring operation. This way method eliminates lower scored languages
+     * from the operation.
+     * after
+     *
+     * @param input          content
+     * @param maxSampleCount Max sampling value. Identifier gets this amount of samples from the content with stepping.
+     *                       if content length is less than maxSampleCount, or maxSampleCount is -1 then sampling is not
+     *                       applied and method behaves like {@link #identify(String) getComponentAt} method.
+     * @return identified language's id
+     */
+    public String identifyWithElimination(String input, int maxSampleCount) {
         String clean = preprocess(input);
         if (input.length() < order)
             return UNKNOWN;
-        return identifyWithElimination(clean, getStepping(clean, maxSampleCount));
+        return scoreWithElimination(clean, maxSampleCount).get(0).toString();
     }
 
-    private String identify(String input, int[] samplingPoints) {
+    /**
+     * @param input          input data
+     * @param maxSampleCount Max sampling value. Identifier gets this amount of samples from the content with stepping.
+     *                       if content length is less than maxSampleCount, or maxSampleCount is -1 then sampling is not
+     *                       applied and method behaves like {@link #identify(String) getComponentAt} method.
+     * @return the identification results in a list for all languages and their respective scores. List is sorted by score
+     *         in descending order. So best match is the first item.
+     */
+    public List<IdResult> getScores(String input, int maxSampleCount) {
+        String clean = preprocess(input);
+        if (input.length() < order)
+            return Collections.emptyList();
+        return convertModelScoresToIdscores(scoreFull(clean, maxSampleCount));
+    }
+
+    private String identifySamples(String input, int[] samplingPoints) {
         String[] grams = getGrams(input, samplingPoints);
         double max = -Double.MAX_VALUE;
         String maxLanguage = null;
@@ -316,7 +326,43 @@ public class LanguageIdentifier {
         return maxLanguage;
     }
 
-    private String identifyWithElimination(String input, int[] samplingPoints) {
+    private List<ModelScore> scoreFull(String input, int maxSampleCount) {
+        int[] samplingPoints;
+        if (maxSampleCount == -1)
+            samplingPoints = getStepping(input, input.length());
+        else
+            samplingPoints = getStepping(input, maxSampleCount);
+        List<ModelScore> modelScores = Lists.newArrayListWithCapacity(modelIdArray.length);
+        for (CharNgramLanguageModel model : models.values()) {
+            modelScores.add(new ModelScore(model, 0));
+        }
+        String[] grams = getGrams(input, samplingPoints);
+        int gramCounter = 0;
+        while (gramCounter < grams.length) {
+            for (ModelScore modelScore : modelScores) {
+                modelScore.score += modelScore.model.gramProbability(grams[gramCounter]);
+            }
+            gramCounter++;
+        }
+        Collections.sort(modelScores);
+        return modelScores;
+    }
+
+    private List<IdResult> convertModelScoresToIdscores(List<ModelScore> modelScores) {
+        List<IdResult> res = new ArrayList<>(modelScores.size());
+        for (int i = 0; i < modelScores.size(); i++) {
+            ModelScore modelScore = modelScores.get(i);
+            res.add(i, new IdResult(modelScore.model.getId(), modelScore.score));
+        }
+        return res;
+    }
+
+    private List<ModelScore> scoreWithElimination(String input, int maxSampleCount) {
+        int[] samplingPoints;
+        if (maxSampleCount == -1)
+            samplingPoints = getStepping(input, input.length());
+        else
+            samplingPoints = getStepping(input, maxSampleCount);
         List<ModelScore> modelScores = Lists.newArrayListWithCapacity(modelIdArray.length);
         for (CharNgramLanguageModel model : models.values()) {
             modelScores.add(new ModelScore(model, 0));
@@ -325,7 +371,7 @@ public class LanguageIdentifier {
         int gramCounter = 0;
         int intervalCounter = 0;
         while (gramCounter < grams.length) {
-            if (intervalCounter == 10 && modelScores.size() > 5) {
+            if (intervalCounter == ELIMINATION_SAMPLE_STEP && modelScores.size() > 5) {
                 intervalCounter = 0;
                 Collections.sort(modelScores);
                 modelScores = modelScores.subList(0, modelScores.size() / 2 + 1);
@@ -337,7 +383,31 @@ public class LanguageIdentifier {
             gramCounter++;
         }
         Collections.sort(modelScores);
-        return modelScores.get(0).model.getId();
+        return modelScores;
+    }
+
+    // TODO make it public after proper testing
+    private String identify(String input, int maxSampleCount, double threshold) {
+        String clean = preprocess(input);
+        if (clean.length() < order)
+            return UNKNOWN;
+        IdResult result = identifyConf(clean, getStepping(clean, maxSampleCount));
+        if (result.score >= threshold)
+            return result.id;
+        else
+            return BaseCharNgramModel.UNKNOWN;
+    }
+
+    // TODO make it public after proper testing
+    private String identify(String input, double confidenceThreshold) {
+        String clean = preprocess(input);
+        if (clean.length() < order)
+            return UNKNOWN;
+        IdResult result = identifyConf(clean, getSequencial(clean));
+        if (result.score >= confidenceThreshold)
+            return result.id;
+        else
+            return UNKNOWN;
     }
 
     private IdResult identifyConf(String input, int[] samplingPoints) {
@@ -374,8 +444,8 @@ public class LanguageIdentifier {
      * @return preprocessed value.
      */
     public static String preprocess(String s) {
-        // s = removeCharsPattern.matcher(s).replaceAll("");
-        //  s = whiteSpacePattern.matcher(s).replaceAll(" ");
+        s = removeCharsPattern.matcher(s).replaceAll("");
+        s = whiteSpacePattern.matcher(s).replaceAll(" ");
         return s.toLowerCase();
     }
 
@@ -387,13 +457,9 @@ public class LanguageIdentifier {
             this.id = id;
             this.score = score;
         }
-    }
 
-    public static void main(String[] args) throws IOException {
-        String[] languages = {"tr", "en", "ar"};
-        LanguageIdentifier identifier = LanguageIdentifier.generateFromCounts(languages);
-        String langId = identifier.identifyWithSampling("Ali okula gidecek");
-        System.out.println("Dil: " + langId);
-
+        public String toString() {
+            return id + " : " + String.format("%.3f", score);
+        }
     }
 }

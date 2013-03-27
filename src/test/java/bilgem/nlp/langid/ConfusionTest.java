@@ -30,7 +30,7 @@ public class ConfusionTest {
 
     public void testAll() throws IOException {
 
-        int sliceLength = 100;
+        int sliceLength = 300;
         int maxSliceCount = 1000;
         List<TestSet> sets = allSets(maxSliceCount, sliceLength);
         Set<String> languages = identifier.getLanguages();
@@ -49,8 +49,8 @@ public class ConfusionTest {
                     LanguageIdentifier.IdResult idResult = identifier.identifyFullConf(s);
                     result.add(idResult.id);
 */
-                    //String t = identifier.identifyWithSampling(s, 100);
-                    String t = identifier.identifyWithSampling(s, 100);
+                    String t = identifier.identify(s, 100);
+                    //String t = identifier.identify(s);
                     //  if (set.modelId.equals(language) && !t.equals(language))
                     //      System.out.println(s);
                     result.add(t);

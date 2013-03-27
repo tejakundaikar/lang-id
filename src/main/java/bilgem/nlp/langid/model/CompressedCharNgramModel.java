@@ -23,7 +23,7 @@ public class CompressedCharNgramModel extends BaseCharNgramModel implements Char
     ProbData[] gramData;
     DoubleLookup[] lookups;
 
-    static final double BACK_OFF = -5;
+    static final double BACK_OFF = -2;
     static final int FINGER_PRINT_MASK = (1 << 16) - 1;
 
 
@@ -73,7 +73,8 @@ public class CompressedCharNgramModel extends BaseCharNgramModel implements Char
                 for (final String key : keys) {
                     final int index = mphfs[i].get(key);
                     fingerprints[index] = MultiLevelMphf.hash(key, -1) & FINGER_PRINT_MASK;
-                    probabilityIndexes[index] = quantizer.getQuantizationIndex(model.gramLogProbs[i].values.get(key));
+                    probabilityIndexes[index] = quantizer.getQuantizationIndex(
+                            model.gramLogProbs[i].values.get(key));
                 }
 
                 lookups[i].save(dos);
@@ -85,7 +86,6 @@ public class CompressedCharNgramModel extends BaseCharNgramModel implements Char
                 mphfs[i].serialize(dos);
             }
         }
-
     }
 
     /**

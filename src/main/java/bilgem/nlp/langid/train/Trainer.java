@@ -174,7 +174,7 @@ public class Trainer {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    private static void train3gram() throws IOException {
         File[] trainingDirs = {
                 new File("/home/kodlab/data/language-data/subtitle"),
                 new File("/home/kodlab/data/language-data/wiki")
@@ -183,7 +183,7 @@ public class Trainer {
         Set<String> all = Sets.newHashSet(Arrays.asList(Language.allLanguages()));
         all.removeAll(large);
 
-        File countModelDir = new File("/home/kodlab/data/language-data/models/counts");
+        File countModelDir = new File("/home/kodlab/data/language-data/models/counts3");
         Trainer trainer = new Trainer(
                 trainingDirs,
                 countModelDir,
@@ -199,8 +199,42 @@ public class Trainer {
                 new int[]{50, 30, 30});
         trainer2.trainParallel(large);
 
-        File compressedModelDir = new File("/home/kodlab/data/language-data/models/compressed");
+        File compressedModelDir = new File("/home/kodlab/data/language-data/models/compressed3");
         String[] languages = {"tr","en"};
         trainer.generateModelsToDir(countModelDir,compressedModelDir, languages, true );
+    }
+
+    private static void train2gram() throws IOException {
+        File[] trainingDirs = {
+                new File("/home/kodlab/data/language-data/subtitle"),
+                new File("/home/kodlab/data/language-data/wiki")
+        };
+        Set<String> large = Sets.newHashSet("JA", "KO", "ZH", "ML", "HI", "KM", "MY", "EL", "AR");
+        Set<String> all = Sets.newHashSet(Arrays.asList(Language.allLanguages()));
+        all.removeAll(large);
+
+        File countModelDir = new File("/home/kodlab/data/language-data/models/counts2");
+        Trainer trainer = new Trainer(
+                trainingDirs,
+                countModelDir,
+                2,
+                new int[]{20, 2});
+
+        trainer.trainParallel(all);
+
+        Trainer trainer2 = new Trainer(
+                trainingDirs,
+                countModelDir,
+                2,
+                new int[]{50, 40});
+        trainer2.trainParallel(large);
+
+        File compressedModelDir = new File("/home/kodlab/data/language-data/models/compressed2");
+        String[] languages = {"tr","en"};
+        trainer.generateModelsToDir(countModelDir,compressedModelDir, languages, true );
+    }
+
+    public static void main(String[] args) throws IOException {
+        train2gram();
     }
 }
