@@ -1,82 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c13eeb84-230a-4634-998e-1cab28fff5b1" name="Default" comment="Breaking changes.&#10;LanguageIdentifier method names are changed.&#10;indetifyFull, identifyWithSampling -&gt; identify&#10;identifyWithElimination is added.&#10;getScores">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/tr/site1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/tr/site2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ar.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ar.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/az.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/az.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ba.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ba.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/be.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/be.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/bg.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/bg.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/bs.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/bs.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ca.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ca.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ce.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ce.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ck.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ck.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/cs.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/cs.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/cv.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/cv.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/da.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/da.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/de.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/de.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/diq.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/diq.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/el.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/el.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/en.clm" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/en.clm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/en.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/en.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/eo.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/eo.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/es.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/es.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/et.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/et.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/eu.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/eu.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/fa.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/fa.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/fi.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/fi.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/fr.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/fr.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/he.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/he.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/hi.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/hi.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/hr.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/hr.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/hu.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/hu.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/hy.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/hy.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/id.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/id.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/is.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/is.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/it.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/it.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ja.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ja.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/jv.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/jv.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ka.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ka.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/kk.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/kk.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/km.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/km.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ko.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ko.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ku.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ku.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ky.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ky.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/la.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/la.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/lt.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/lt.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/lv.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/lv.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ml.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ml.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/mn.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/mn.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ms.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ms.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/my.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/my.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/nl.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/nl.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/no.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/no.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/pl.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/pl.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/pt.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/pt.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ro.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ro.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/ru.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/ru.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/sk.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/sk.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/sl.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/sl.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/sr.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/sr.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/sv.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/sv.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/tr.clm" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/tr.clm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/tr.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/tr.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/uk.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/uk.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/unk.clm" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/tr_en/unk.clm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/uz.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/uz.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/vi.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/vi.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/war.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/war.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/models/langid/count/zh.count" afterPath="$PROJECT_DIR$/src/main/resources/models/langid/count/zh.count" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/CompressedCharNgramModel.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/CompressedCharNgramModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/ConfusionTest.java" afterPath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/ConfusionTest.java" />
+    <list default="true" id="c13eeb84-230a-4634-998e-1cab28fff5b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" afterPath="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/MapBasedCharNgramLanguageModel.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/MapBasedCharNgramLanguageModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java" afterPath="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lang-id.iml" afterPath="$PROJECT_DIR$/lang-id.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lang-id.iws" />
@@ -86,7 +15,7 @@
     <file path="$PROJECT_DIR$/../BilgemNlpToolkit/src/bilgem/nlp/apps/TurkishMorphology.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361865532485" ignored="false" />
     <file path="/TurkishMorphology.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361865421613" ignored="false" />
     <file path="$PROJECT_DIR$/../BilgemNlpToolkit/src/bilgem/nlp/apps/TurkishSentenceTokenizer.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361865532485" ignored="false" />
-    <file path="/Dummy.txt" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364387428252" ignored="false" />
+    <file path="/Dummy.txt" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364387535591" ignored="false" />
     <file path="$PROJECT_DIR$/../smooth-nlp/smooth-lm/smooth-lm.iml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361871174055" ignored="false" />
     <file path="$PROJECT_DIR$/../antlr4/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361880625894" ignored="false" />
     <file path="$PROJECT_DIR$/../antlr4/runtime/Java/pom.xml" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1361951966909" ignored="false" />
@@ -106,11 +35,11 @@
     <file path="/CountSetTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364209213038" ignored="false" />
     <file path="$PROJECT_DIR$/../smooth-nlp/smooth-core/src/main/java/smoothnlp/core/CountSet.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364371445801" ignored="false" />
     <file path="/CountSet.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364218458645" ignored="false" />
-    <file path="/LanguageIdentifier.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364387497095" ignored="false" />
+    <file path="/LanguageIdentifier.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364387884209" ignored="false" />
     <file path="$PROJECT_DIR$/../smooth-nlp/smooth-core/src/test/java/smoothnlp/core/HistogramTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364218061313" ignored="false" />
     <file path="/HistogramTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364218058479" ignored="false" />
     <file path="/CompressedCharNgramModel.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364220083219" ignored="false" />
-    <file path="/LanguageIndentifierTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364383806774" ignored="false" />
+    <file path="/LanguageIndentifierTest.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364387961332" ignored="false" />
     <file path="$PROJECT_DIR$/../smooth-nlp/smooth-lm/src/main/java/smoothnlp/lm/compression/SmoothLm.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364372270918" ignored="false" />
     <file path="/SmoothLm.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364371907287" ignored="false" />
     <file path="/MapBasedCharNgramLanguageModel.java" changelist="c13eeb84-230a-4634-998e-1cab28fff5b1" time="1364384896420" ignored="false" />
@@ -188,10 +117,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LanguageIdentifier.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LanguageIdentifier.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="68" selection-start="12876" selection-end="12876" vertical-scroll-proportion="0.86780906">
+            <state line="161" column="0" selection-start="6619" selection-end="6619" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -237,10 +166,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LanguageIndentifierTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LanguageIndentifierTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="18" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
+            <state line="35" column="32" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.72827417">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -308,12 +237,12 @@
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/CompressedCharNgramModel.java" />
         <option value="$PROJECT_DIR$/src/test/resources/tr/site1.txt" />
         <option value="$PROJECT_DIR$/src/test/resources/tr/site2.txt" />
-        <option value="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/train/Trainer.java" />
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/model/MapBasedCharNgramLanguageModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/ConfusionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java" />
+        <option value="$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java" />
       </list>
     </option>
   </component>
@@ -652,7 +581,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LanguageIndentifierTest">
+  <component name="RunManager" selected="JUnit.LanguageIndentifierTest.getLanguagesTest">
     <configuration default="false" name="ConfusionTest" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="bilgem.nlp.langid.ConfusionTest" />
       <option name="VM_PARAMETERS" />
@@ -681,28 +610,6 @@
       <ConfigurationWrapper RunnerId="Debug with VisualVM" />
       <ConfigurationWrapper RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run with VisualVM" />
-      <method />
-    </configuration>
-    <configuration default="false" name="LanguageIndentifierTest.trSiteTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="lang-id" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="bilgem.nlp.langid" />
-      <option name="MAIN_CLASS_NAME" value="bilgem.nlp.langid.LanguageIndentifierTest" />
-      <option name="METHOD_NAME" value="trSiteTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="Trainer" type="Application" factoryName="Application" temporary="true">
@@ -751,6 +658,28 @@
       <option name="MAIN_CLASS_NAME" value="bilgem.nlp.langid.LanguageIndentifierTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanguageIndentifierTest.getLanguagesTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="lang-id" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="bilgem.nlp.langid" />
+      <option name="MAIN_CLASS_NAME" value="bilgem.nlp.langid.LanguageIndentifierTest" />
+      <option name="METHOD_NAME" value="getLanguagesTest" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -876,18 +805,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.ConfusionTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.trSiteTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Trainer" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Trainer" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.getLanguagesTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ConfusionTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Trainer" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.trSiteTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.getLanguagesTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ConfusionTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.LanguageIndentifierTest.functionalTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Trainer" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -956,7 +885,11 @@
       <created>1364224530698</created>
       <updated>1364224530698</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Breaking changes.&#10;LanguageIdentifier method names are changed.&#10;indetifyFull, identifyWithSampling -&gt; identify&#10;identifyWithElimination is added.&#10;getScores is added,&#10;input cleaning re-activated">
+      <created>1364387548890</created>
+      <updated>1364387548890</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1025,7 +958,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better resource package naming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Breaking changes.&#10;LanguageIdentifier method names are changed.&#10;indetifyFull, identifyWithSampling -&gt; identify&#10;identifyWithElimination is added.&#10;getScores is added,&#10;input cleaning re-activated" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1043,6 +976,7 @@
     <MESSAGE value="Use CountingSet instead of Histogram for now. There seems to be an issue with linear probing.&#10;Add tr-en and unk compressed models.&#10;Add a static factory method to LanguageIndentifier class for specific internal model loading.&#10;Use Java7 ARM blocks&#10;" />
     <MESSAGE value="fix class loading correctly. Thanks to Canan Girgin" />
     <MESSAGE value="Better resource package naming" />
+    <MESSAGE value="Breaking changes.&#10;LanguageIdentifier method names are changed.&#10;indetifyFull, identifyWithSampling -&gt; identify&#10;identifyWithElimination is added.&#10;getScores is added,&#10;input cleaning re-activated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1152,18 +1086,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="18" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
+        <state line="161" column="0" selection-start="6619" selection-end="6619" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bilgem/nlp/langid/LanguageIdentifier.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/bilgem/nlp/langid/LanguageIndentifierTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="68" selection-start="12876" selection-end="12876" vertical-scroll-proportion="0.86780906">
+        <state line="35" column="32" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.72827417">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

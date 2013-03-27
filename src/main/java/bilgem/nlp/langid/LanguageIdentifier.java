@@ -158,6 +158,9 @@ public class LanguageIdentifier {
         return grams;
     }
 
+    /**
+     * @return The language id's that this identifier can detect.
+     */
     public Set<String> getLanguages() {
         Set<String> all = Sets.newHashSet(models.keySet());
         all.remove(BaseCharNgramModel.UNKNOWN);
@@ -166,19 +169,21 @@ public class LanguageIdentifier {
 
     /**
      * Loads internal models from internal compressed resource folder.
-     * Such as
+     * Such as /models/langid has a folder named tr_en. It contains tr,en and unk compressed models.
+     * for loading those modeles, fromModelGroup(String groupId, "tr","en") should be called.
      *
-     * @param groupId
-     * @param languages
-     * @return
-     * @throws IOException
+     * @param groupId   internal folder name
+     * @param languages languages reside in internal folder.
+     * @return LanguageIdentifier
+     * @throws IOException In case of an IO error.
      */
     public static LanguageIdentifier fromModelGroup(String groupId, String... languages) throws IOException {
         if (languages.length == 0)
             throw new IllegalArgumentException("No language is provided!");
         Map<String, CharNgramLanguageModel> map = Maps.newHashMap();
-        List<String> langs = Lists.newArrayList(languages);
-        langs.add("unk");
+        Set<String> langs = Sets.newHashSet(languages);
+        if (!langs.contains("unk"))
+            langs.add("unk");
         for (String language : langs) {
             String resourceName = "/models/langid/" + groupId + "/" + language + ".clm";
             InputStream is = Resources.getResource(LanguageIdentifier.class, resourceName).openStream();

@@ -29,6 +29,15 @@ public class LanguageIndentifierTest {
         Assert.assertEquals("en", lid.identify("hello world and all the planets"));
     }
 
+    @Test
+    public void getLanguagesTest() throws IOException {
+        LanguageIdentifier lid = getTrEnLanguageIdentifier();
+        Assert.assertTrue(lid.getLanguages().contains("tr"));
+        Assert.assertTrue(lid.getLanguages().contains("en"));
+        Assert.assertFalse(lid.getLanguages().contains("unk"));
+        Assert.assertFalse(lid.getLanguages().contains("ar"));
+    }
+
     private LanguageIdentifier getTrEnLanguageIdentifier() throws IOException {
         String[] langs = {"en", "tr"};
         return LanguageIdentifier.fromModelGroup("tr_en", langs);
